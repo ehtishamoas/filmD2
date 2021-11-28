@@ -1,0 +1,194 @@
+html {
+  scroll-behavior: smooth; /*to make our scrolling with menu button smooth*/
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: Arial, sans-serif;
+}
+.bg {
+  height: 100vh; /*occupy full screen*/
+  background-image: url(img/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+#navbar {
+  background-color: #f1f1f1;
+  padding: 50px 10px;
+  transition: 0.4s;
+  position: fixed; /*to make menu bar stay even after scrolling*/
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  opacity: 0.7;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  column-gap: 500px;
+
+}
+/*All the links in menu*/
+#navbar a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #title {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+  font-style: italic;
+  font-family: algerian;
+  font-variant: small-caps;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+}
+
+#navbar-right {
+  float: right;
+}
+
+.vidContainer {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+}
+/*wrapper grid of food waste part*/
+.foodWaste {
+  display: grid;
+  grid-template-columns: auto auto; /*make 2 columns*/
+  align-content: center;
+  justify-content: center;
+  column-gap: 100px;
+  width: 100%;
+  padding-bottom: 150px;
+  padding-top: 100px;
+}
+
+.WasteControlTips{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  width: 500px;
+}
+/* button that is used to show and hide the content */
+.collapsible {
+  width: 100%;
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 24px;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+/* display + = symbols */
+.collapsible:after {
+  content: '\002B'; /* character code for + sign */
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2212"; /* character code for - sign */
+}
+
+/* Style the collapsible content. It's hidden by default */
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  font-size: 22px;
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+/*Wrapper of menu and "I am craving" text*/
+.craveMenu {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  justify-content: center;
+  column-gap: 40px;
+  padding-bottom: 50px;
+  padding-top: 100px;
+}
+.craveText {
+  font-family: garamound;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant: small-caps;
+  font-size: 36px;
+}
+/*wrapper of button divs*/
+.foodOptions {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  align-content: center;
+  justify-content: center;
+  column-gap: 30px;
+  width: 100%;
+}
+/*All the button divs have same class name*/
+.foodType {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: green;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.foodType:hover {
+  background-color: lightgreen !important; /*important because we are changing colors of all the divs to green (except for clicked one) in javascript */
+}
+
+.restaurantContainer {
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-content: center;
+}
+.restaurant {
+  grid-area: 1/1/1/1; /*Create one column and overap all the images*/
+  display: none; /*it will be controlled in javascript*/
+}
+
+.map{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 100px;
+}
